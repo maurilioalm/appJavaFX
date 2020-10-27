@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaInicialController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" prefHeight="35.0" prefWidth="600.0" text="2DGM2-Solutions" textAlignment="CENTER" textFill="#440bee">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+         <opaqueInsets>
+            <Insets top="50.0" />
+         </opaqueInsets>
+      </Label>
+      <PasswordField fx:id="matriculaColaborador" alignment="CENTER" layoutX="160.0" layoutY="214.0" prefHeight="30.0" prefWidth="280.0" promptText="Digite sua senha" />
+      <Button fx:id="bLogar" layoutX="269.0" layoutY="256.0" mnemonicParsing="false" onAction="#bLogarAcao" text="Entrar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextField fx:id="nomeColaborador" alignment="CENTER" layoutX="160.0" layoutY="169.0" prefHeight="30.0" prefWidth="280.0" promptText="Nome do Colaborador" />
+      <Button fx:id="bCadastrarColaborador" layoutX="28.0" layoutY="323.0" mnemonicParsing="false" onAction="#bCadastrarColaboradorAcao" prefHeight="37.0" prefWidth="194.0" text="Cadastrar Colaborador">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="bCadastrarPeca" layoutX="419.0" layoutY="323.0" mnemonicParsing="false" onAction="#bCadastrarPecaAcao" prefHeight="37.0" prefWidth="136.0" text="Cadastrar Peca">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="bCadastrarCliente" layoutX="249.0" layoutY="323.0" mnemonicParsing="false" onAction="#bCadastrarClienteAcao" prefHeight="37.0" prefWidth="151.0" text="Cadastrar Cliente">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="265.0" layoutY="130.0" prefHeight="27.0" prefWidth="69.0" text="Login" textAlignment="CENTER" textFill="#1e00ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

@@ -3,59 +3,76 @@ package repositorios;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import negocio.entidades.Peca;
 
 //@Author Michelle
-public class RepositorioPecas implements IRepositorio<Peca>{
-    private List<Peca> pecas = new ArrayList<Peca>();
+public class RepositorioPecas implements IRepositorio<Peca> {
 
-    @Override
-    public Peca localizar(String codigo) {
-        Peca obj = null;
-        for (Peca peca : pecas) {
-            if (Objects.equals(peca.getCodigo(), codigo)) {
-                obj = peca;
-            }
-        }
-        return obj;
-    }
+	private List<Peca> pecas = new ArrayList<Peca>();
 
-    @Override
-    public List<Peca> localizarTodos() {
-        return pecas;
-}
+	@Override
+	public Peca localizar(String codigo) {
+		Peca obj = null;
+		for (Peca peca : pecas) {
+			if (Objects.equals(peca.getCodigo(), codigo)) {
+				obj = peca;
+			}
+		}
+		return obj;
+	}
 
-    @Override
-    public boolean inserir(Peca peca) {
-        pecas.add(peca);
-        return true;
-    }
+	@Override
+	public List<Peca> localizarTodos() {
+		return pecas;
+	}
 
-    @Override
-    public boolean deletar(String codigo) {
-        for (Peca peca : pecas) {
-            if (peca.getCodigo() == codigo) {
-                pecas.remove(peca);
-                return true;
-            }
-        }
-        return false;
-    }
+	@Override
+	public boolean inserir(Peca peca) {
+		if (pecas.contains(peca)) {
+			return false;
+		} else {
+			pecas.add(peca);
+			return true;
+		}
+	}
 
-    @Override
-    public boolean atualizar(String codigo, Peca peca) {
-        for (Peca aux : pecas) {
-            if (aux.getCodigo() == codigo) {
-                updatePeca(aux, peca);
-                return true;
-            }
-        }return false;
-    }
+	@Override
+	public boolean deletar(String codigo) {
+		for (Peca peca : pecas) {
+			if (peca.getCodigo() == codigo) {
+				pecas.remove(peca);
+				return true;
+			}
+		}
+		return false;
+	}
 
-    private void updatePeca(Peca aux, Peca peca) {
-        aux.setCodigo(peca.getCodigo());
-        aux.setDescricao(peca.getDescricao());
-        aux.setPreco(peca.getPreco());
-        aux.setQtdEstoque(peca.getQtdEstoque());
-    }
+	@Override
+	public boolean atualizar(String codigo, Peca peca) {
+		for (Peca aux : pecas) {
+			if (aux.getCodigo() == codigo) {
+				updatePeca(aux, peca);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private void updatePeca(Peca aux, Peca peca) {
+		aux.setCodigo(peca.getCodigo());
+		aux.setDescricao(peca.getDescricao());
+		aux.setPreco(peca.getPreco());
+		aux.setQtdEstoque(peca.getQtdEstoque());
+	}
+
+	public List<Peca> listarPecas() {
+		return pecas;
+	}
+
+	@Override
+	public String toString() {
+		return "RepositorioPecas [pecas = " + pecas + "]";
+	}
+
 }

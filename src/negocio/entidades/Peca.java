@@ -49,6 +49,7 @@ public class Peca {
 	public void setQtdEstoque(int qtdEstoque) {
 		this.qtdEstoque = qtdEstoque;
 	}
+	
 
 	@Override
 	public int hashCode() {
@@ -74,6 +75,13 @@ public class Peca {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Peca [codigo =" + codigo + ", descricao =" + descricao + ", preco =" + preco + ", qtdEstoque =" + qtdEstoque
+				+ "]";
+	}
+	
 	
 	
 }

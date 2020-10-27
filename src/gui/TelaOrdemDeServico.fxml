@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.OrdemDeServicoController">
+   <children>
+      <Label layoutX="211.0" layoutY="14.0" text="Ordem de Servico" textFill="#4000ff">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="bVoltar" layoutX="12.0" layoutY="638.0" mnemonicParsing="false" onAction="#bVolarAcao" prefHeight="38.0" prefWidth="58.0" text="Voltar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="bAddEmitirOS" layoutX="529.0" layoutY="638.0" mnemonicParsing="false" onAction="#bEmitirOsAcao" prefHeight="38.0" prefWidth="94.0" text="Emitir OS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="mostrarColaborador" layoutX="13.0" layoutY="171.0" prefHeight="25.0" prefWidth="614.0" text="Nome_Colaborador_responsavel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="bMostrarColaborador" layoutX="79.0" layoutY="638.0" mnemonicParsing="false" onAction="#bAtualizarDados" prefHeight="38.0" prefWidth="96.0" text="Atualizar OS">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="bAddCliente" layoutX="183.0" layoutY="638.0" mnemonicParsing="false" onAction="#bAddClienteAcao" prefHeight="38.0" prefWidth="85.0" text="Add_Cliente">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="bAddServico" layoutX="275.0" layoutY="638.0" mnemonicParsing="false" onAction="#bTelaGerarServicoAcao" prefHeight="38.0" prefWidth="93.0" text="Add_Servico">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="mostrarCliente" layoutX="15.0" layoutY="205.0" prefHeight="21.0" prefWidth="614.0" text="Nome_do_Cliente">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="mostrarServico" alignment="TOP_LEFT" layoutX="13.0" layoutY="235.0" prefHeight="78.0" prefWidth="614.0" text="Descricao_do_Servico">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="bAddPecas" layoutX="374.0" layoutY="638.0" mnemonicParsing="false" onAction="#bTelaListaPecaAcao" prefHeight="38.0" prefWidth="93.0" text="Add_Peca">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="mostrarPecas" layoutX="17.0" layoutY="324.0" prefHeight="21.0" prefWidth="606.0" text="Não houve pecas">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="mostrarPrecoTotal" layoutX="18.0" layoutY="570.0" text="Valor_Total_OS">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="361.0" text="Status_OS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="mostrarDataEntrada" layoutX="15.0" layoutY="137.0" prefHeight="21.0" prefWidth="404.0" text="Data_EntradaOS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="mostrarDataSaida" layoutX="17.0" layoutY="395.0" prefHeight="25.0" prefWidth="606.0" text="Data_Conclusão">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="bAberto" layoutX="117.0" layoutY="361.0" mnemonicParsing="false" onAction="#bAbertoAcao" text="Aberto" textFill="#3a06d7">
+         <toggleGroup>
+            <ToggleGroup fx:id="grupo" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="bEncaminhado" layoutX="210.0" layoutY="361.0" mnemonicParsing="false" onAction="#bEncaminhadoAcao" text="Encaminhado" textFill="#c3c315" toggleGroup="$grupo" />
+      <RadioButton fx:id="bConcluido" layoutX="356.0" layoutY="361.0" mnemonicParsing="false" onAction="#bConcluidoAcao" text="Concluido" textFill="#1aa81d" toggleGroup="$grupo" />
+      <RadioButton fx:id="bCancelado" layoutX="505.0" layoutY="361.0" mnemonicParsing="false" onAction="#bCandeladoAcao" text="Cancelado" textFill="#cd1010" toggleGroup="$grupo" />
+      <Label fx:id="mostrarNumOS" layoutX="14.0" layoutY="106.0" text="NumOS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textDesconto" layoutX="105.0" layoutY="514.0" onAction="#bAtualizarDados" prefHeight="31.0" prefWidth="96.0" text="0" />
+      <Label layoutX="251.0" layoutY="428.0" text="Pagamento" textFill="#2302f8">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="247.0" layoutY="52.0" text="Informações" textFill="#2302f8">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbAvista" layoutX="61.0" layoutY="478.0" mnemonicParsing="false" onAction="#rbAvistaAcao" text="À Vista">
+         <toggleGroup>
+            <ToggleGroup fx:id="pagamento" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rbCartao" layoutX="227.0" layoutY="478.0" mnemonicParsing="false" onAction="#rbCartaoAcao" text="Cartão de Credito" toggleGroup="$pagamento" />
+      <RadioButton fx:id="rbDebito" layoutX="435.0" layoutY="478.0" mnemonicParsing="false" onAction="#rbDebitoAcao" text="Cartão de Debito" toggleGroup="$pagamento" />
+      <Label layoutX="20.0" layoutY="519.0" text="Desconto R$:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="519.0" text="Adiantamento R$:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textAdiantamento" layoutX="368.0" layoutY="514.0" onAction="#bAtualizarDados" prefHeight="31.0" prefWidth="96.0" text="0" />
+      <TextField fx:id="textBuscarOS" layoutX="446.0" layoutY="64.0" prefHeight="31.0" prefWidth="119.0" promptText="Numero OS" />
+      <Button fx:id="bBuscarOS" layoutX="562.0" layoutY="64.0" mnemonicParsing="false" onAction="#bBuscarOSAcao" text="Buscar" />
+   </children>
+</Pane>

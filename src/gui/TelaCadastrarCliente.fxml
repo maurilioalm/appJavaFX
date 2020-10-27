@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClienteController">
+   <children>
+      <Label layoutX="204.0" layoutY="30.0" prefHeight="35.0" prefWidth="192.0" text="Cadastrar Cliente" textFill="#2300ff">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="190.0" text="CPF" />
+      <Label layoutX="109.0" layoutY="146.0" text="RG" />
+      <Label layoutX="98.0" layoutY="100.0" text="Nome" />
+      <TextField fx:id="textCpf" layoutX="184.0" layoutY="185.0" promptText="ex: 077.123.456-98" />
+      <TextField fx:id="textRg" layoutX="184.0" layoutY="141.0" promptText="ex: 7346758" />
+      <TextField fx:id="textNome" layoutX="184.0" layoutY="95.0" prefHeight="31.0" prefWidth="186.0" promptText="ex: Maria" />
+      <Label layoutX="107.0" layoutY="320.0" text="Email" />
+      <Label layoutX="95.0" layoutY="276.0" text="Endereco" />
+      <Label layoutX="97.0" layoutY="230.0" text="Telefone" />
+      <TextField fx:id="textEmail" layoutX="184.0" layoutY="315.0" promptText="ex: maria@gmeil.com" />
+      <TextField fx:id="textEndereco" layoutX="184.0" layoutY="271.0" promptText="ex: rua 7, 200, Recife" />
+      <TextField fx:id="textTelefone" layoutX="184.0" layoutY="225.0" prefHeight="31.0" prefWidth="186.0" promptText="ex: 99695-4421" />
+      <Button fx:id="bCadastrar" layoutX="490.0" layoutY="357.0" mnemonicParsing="false" onAction="#bCadastrarAcao" text="Cadastrar" />
+      <Button fx:id="bVoltar" layoutX="20.0" layoutY="357.0" mnemonicParsing="false" onAction="#bVolarAcao" text="Voltar" />
+   </children>
+</Pane>

@@ -5,16 +5,15 @@ import java.util.List;
 
 import negocio.entidades.Colaborador;
 
-
 public class RepositorioColaborador implements IRepositorio<Colaborador> {
 
 	private List<Colaborador> colaboradores = new ArrayList<Colaborador>();
 
 	@Override
-	public Colaborador localizar(String cpf) {
+	public Colaborador localizar(String matricula) {
 		Colaborador obj = null;
 		for (Colaborador colaborador : colaboradores) {
-			if (colaborador.getCpf() == cpf) {
+			if (colaborador.getMatricula().equals(matricula)){
 				obj = colaborador;
 			}
 		}
@@ -28,8 +27,12 @@ public class RepositorioColaborador implements IRepositorio<Colaborador> {
 
 	@Override
 	public boolean inserir(Colaborador colaborador) {
-		colaboradores.add(colaborador);
-		return true;
+		if (colaboradores.contains(colaborador)) {
+			return false;
+		} else {
+			colaboradores.add(colaborador);
+			return true;
+		}
 	}
 
 	@Override
@@ -50,15 +53,30 @@ public class RepositorioColaborador implements IRepositorio<Colaborador> {
 				updateColaborador(aux, colaborador);
 				return true;
 			}
-		}return false;
+		}
+		return false;
 	}
 
 	private void updateColaborador(Colaborador aux, Colaborador colaborador) {
 		aux.setNome(colaborador.getNome());
 		aux.setRg(colaborador.getRg());
 		aux.setMatricula(colaborador.getMatricula());
-	
+
 	}
 
-}
+	public void listaColaborador() {
+		for (Colaborador colaborador : colaboradores) {
+			System.out.println(colaborador);
+		}
+	}
 
+	public boolean altenticar(String nome, String matricula) {
+		for (Colaborador colaborador : colaboradores) {
+			if (nome.equals(colaborador.getNome()) && matricula.equals(colaborador.getMatricula())) {
+				System.out.println("Repo - Colaborador" + colaborador);
+				return true;
+			}
+		}
+		return false;
+	}
+}

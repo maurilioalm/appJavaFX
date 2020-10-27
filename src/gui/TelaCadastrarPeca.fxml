@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PecaController">
+   <children>
+      <Label layoutX="214.0" layoutY="14.0" prefHeight="35.0" prefWidth="173.0" text="Cadastrar Peças" textAlignment="CENTER" textFill="#2b00ff">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textCodigo" layoutX="207.0" layoutY="99.0" promptText="ex: 10162" />
+      <TextField fx:id="textDescricao" layoutX="207.0" layoutY="143.0" promptText="ex: HD 2TB Seagate" />
+      <TextField fx:id="textPreco" layoutX="207.0" layoutY="192.0" promptText="ex: 278.50" />
+      <TextField fx:id="textQuantidade" layoutX="207.0" layoutY="243.0" promptText="15" />
+      <Button fx:id="bCadastrar" layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#bCadastrar" text="Cadastrar" />
+      <Button fx:id="bVoltar" layoutX="64.0" layoutY="314.0" mnemonicParsing="false" onAction="#bVolarAcao" text="Voltar" />
+      <Label layoutX="124.0" layoutY="104.0" text="Codigo" />
+      <Label layoutX="124.0" layoutY="148.0" text="Descricao" />
+      <Label layoutX="124.0" layoutY="197.0" text="Preco" />
+      <Label layoutX="124.0" layoutY="248.0" text="Quantidade" />
+   </children>
+</Pane>

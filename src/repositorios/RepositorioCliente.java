@@ -13,7 +13,7 @@ public class RepositorioCliente implements IRepositorio<Cliente> {
 	public Cliente localizar(String cpf) {
 		Cliente obj = null;
 		for (Cliente cliente : clientes) {
-			if (cliente.getCpf() == cpf) {
+			if (cpf.equals(cliente.getCpf())){
 				obj = cliente;
 			}
 		}
@@ -27,8 +27,12 @@ public class RepositorioCliente implements IRepositorio<Cliente> {
 
 	@Override
 	public boolean inserir(Cliente cliente) {
-		clientes.add(cliente);
-		return true;
+		if (clientes.contains(cliente)) {
+			return false;
+		} else {
+			clientes.add(cliente);
+			return true;
+		}
 	}
 
 	@Override
@@ -49,7 +53,8 @@ public class RepositorioCliente implements IRepositorio<Cliente> {
 				updateCliente(aux, cliente);
 				return true;
 			}
-		}return false;
+		}
+		return false;
 	}
 
 	private void updateCliente(Cliente aux, Cliente cliente) {
@@ -57,6 +62,12 @@ public class RepositorioCliente implements IRepositorio<Cliente> {
 		aux.setTelefone(cliente.getTelefone());
 		aux.setEndereco(cliente.getEndereco());
 		aux.setEmail(cliente.getEmail());
+	}
+
+	public void listaClientes() {
+		for (Cliente cliente : clientes) {
+			System.out.println(cliente);
+		}
 	}
 
 }

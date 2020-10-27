@@ -1,11 +1,14 @@
 package negocio.entidades;
 
 public class Servico {
-	
+
 	private String tipoServico;
 	private String descricaoServico;
 	private Double preco;
-	
+
+	public Servico() {
+	}
+
 	public Servico(String tipoServico, String descricaoServico, Double preco) {
 		this.tipoServico = tipoServico;
 		this.descricaoServico = descricaoServico;
@@ -34,6 +37,12 @@ public class Servico {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	@Override
+	public String toString() {
+		return "Servico [tipoServico=" + tipoServico + ", descricaoServico=" + descricaoServico + ", preco=" + preco
+				+ "]";
 	}
 
 }
